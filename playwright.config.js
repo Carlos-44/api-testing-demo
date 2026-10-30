@@ -11,5 +11,8 @@ module.exports = defineConfig({
   ],
   use: {
     baseURL: "https://jsonplaceholder.typicode.com",
+    trace: "on-first-retry",
+    screenshot: "only-on-failure",
+    video: "on-first-retry",
   },
 });
