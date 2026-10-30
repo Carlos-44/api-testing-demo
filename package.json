@@ -1,0 +1,14 @@
+{
+  "name": "api-testing-demo",
+  "version": "1.0.0",
+  "description": "REST API tests with Playwright's APIRequestContext against the JSONPlaceholder API",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "author": "Carlos Ozoria",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.55.1"
+  }
+}
