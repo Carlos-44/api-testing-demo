@@ -1,0 +1,13 @@
+{
+  "default": {
+    "paths": ["features/**/*.feature"],
+    "require": [
+      "features/step_definitions/**/*.js",
+      "features/support/**/*.js"
+    ],
+    "worldParameters": {
+      "baseURL": "https://jsonplaceholder.typicode.com"
+    },
+    "format": ["progress", "html:cucumber-report.html"]
+  }
+}

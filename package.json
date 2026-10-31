@@ -4,11 +4,13 @@
   "description": "REST API tests with Playwright's APIRequestContext against the JSONPlaceholder API",
   "scripts": {
     "test": "playwright test",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "test:bdd": "cucumber-js --config cucumber.json"
   },
   "author": "Carlos Ozoria",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
     "@playwright/test": "1.55.1"
   }
 }
