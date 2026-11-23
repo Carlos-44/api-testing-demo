@@ -1,9 +1,9 @@
 # TC-005: POST /posts creates a post
 
 - **Priority:** P1
-- **Linked criteria:** F-03 AC-01
+- **Linked criteria:** F-03 AC-01 ([F-03](../features/F-03-write-posts.md))
 - **Status:** Automated
-- **Automation:** tests/posts.api.spec.js — "POST /posts creates a post"
+- **Automation:** tests/posts.api.spec.js — "[TC-005] POST /posts creates a post"
 
 ## Preconditions
 - Internet access to https://jsonplaceholder.typicode.com (a third-party public API).
@@ -20,5 +20,5 @@
 **Pass criteria:** The created post echoes the request and gets id 101.
 
 ## Notes
-- Passed locally 2026-11-23 (Node 20.20.2, Playwright 1.55.1) and in CI on main.
+- Passed locally 2026-11-23 (Node 20.20.2): Playwright 8/8 and Cucumber 8/8, after the TC-ID renames.
 - JSONPlaceholder simulates writes, so nothing is stored. [INFERRED]
