@@ -1,9 +1,9 @@
 # TC-006: PUT /posts/1 replaces a post
 
 - **Priority:** P2
-- **Linked criteria:** F-03 AC-02
+- **Linked criteria:** F-03 AC-02 ([F-03](../features/F-03-write-posts.md))
 - **Status:** Automated
-- **Automation:** tests/posts.api.spec.js — "PUT /posts/1 replaces a post"
+- **Automation:** tests/posts.api.spec.js — "[TC-006] PUT /posts/1 replaces a post"
 
 ## Preconditions
 - Internet access to https://jsonplaceholder.typicode.com (a third-party public API).
@@ -20,4 +20,4 @@
 **Pass criteria:** The replaced post equals the request.
 
 ## Notes
-- Passed locally 2026-11-23 (Node 20.20.2, Playwright 1.55.1) and in CI on main.
+- Passed locally 2026-11-23 (Node 20.20.2): Playwright 8/8 and Cucumber 8/8, after the TC-ID renames.

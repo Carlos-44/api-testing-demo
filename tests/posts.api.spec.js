@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 test.describe("JSONPlaceholder /posts API", () => {
-  test("GET /posts returns the full list of posts", async ({ request }) => {
+  test("[TC-001] GET /posts returns the full list of posts", async ({ request }) => {
     const response = await request.get("/posts");
 
     expect(response.status()).toBe(200);
@@ -17,7 +17,7 @@ test.describe("JSONPlaceholder /posts API", () => {
     });
   });
 
-  test("GET /posts/1 returns a single post", async ({ request }) => {
+  test("[TC-002] GET /posts/1 returns a single post", async ({ request }) => {
     const response = await request.get("/posts/1");
 
     expect(response.status()).toBe(200);
@@ -27,7 +27,7 @@ test.describe("JSONPlaceholder /posts API", () => {
     expect(post.title.length).toBeGreaterThan(0);
   });
 
-  test("GET /posts?userId=1 returns only that user's posts", async ({ request }) => {
+  test("[TC-003] GET /posts?userId=1 returns only that user's posts", async ({ request }) => {
     const response = await request.get("/posts", { params: { userId: 1 } });
 
     expect(response.status()).toBe(200);
@@ -38,7 +38,7 @@ test.describe("JSONPlaceholder /posts API", () => {
     }
   });
 
-  test("GET /posts/1/comments returns comments for that post", async ({ request }) => {
+  test("[TC-004] GET /posts/1/comments returns comments for that post", async ({ request }) => {
     const response = await request.get("/posts/1/comments");
 
     expect(response.status()).toBe(200);
@@ -50,7 +50,7 @@ test.describe("JSONPlaceholder /posts API", () => {
     }
   });
 
-  test("POST /posts creates a post", async ({ request }) => {
+  test("[TC-005] POST /posts creates a post", async ({ request }) => {
     const newPost = { title: "API testing demo", body: "Created by a test", userId: 1 };
 
     const response = await request.post("/posts", { data: newPost });
@@ -61,7 +61,7 @@ test.describe("JSONPlaceholder /posts API", () => {
     expect(created.id).toBe(101);
   });
 
-  test("PUT /posts/1 replaces a post", async ({ request }) => {
+  test("[TC-006] PUT /posts/1 replaces a post", async ({ request }) => {
     const update = { id: 1, title: "Updated title", body: "Updated body", userId: 1 };
 
     const response = await request.put("/posts/1", { data: update });
@@ -70,14 +70,14 @@ test.describe("JSONPlaceholder /posts API", () => {
     expect(await response.json()).toEqual(update);
   });
 
-  test("DELETE /posts/1 returns success with an empty body", async ({ request }) => {
+  test("[TC-007] DELETE /posts/1 returns success with an empty body", async ({ request }) => {
     const response = await request.delete("/posts/1");
 
     expect(response.status()).toBe(200);
     expect(await response.json()).toEqual({});
   });
 
-  test("GET /posts/9999 returns 404 for a post that does not exist", async ({ request }) => {
+  test("[TC-008] GET /posts/9999 returns 404 for a post that does not exist", async ({ request }) => {
     const response = await request.get("/posts/9999");
 
     expect(response.status()).toBe(404);
